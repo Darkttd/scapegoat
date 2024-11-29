@@ -199,6 +199,10 @@ class UnusedMethodParameterTest extends InspectionTest {
       "not warn on non-case class primary params marked val" in {
         assertNoWarnings("""class Foo(val x: Int)""")
       }
+
+      "not warn on non-case class primary params marked unused" in {
+        assertNoWarnings("""class Foo(@annotation.unused x: Int)""")
+      }
     }
   }
 
